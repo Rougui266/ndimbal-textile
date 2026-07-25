@@ -1,0 +1,18 @@
+RewriteEngine On
+
+# 1. Forcer HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. Forcer le www (une fois en https)
+RewriteCond %{HTTP_HOST} ^ndimbal-textile\.sn [NC]
+RewriteRule ^(.*)$ https://www.ndimbal-textile.sn/$1 [L,R=301]
+
+# 3. Redirection d'une ancienne page produit supprimée vers son remplacement
+Redirect 301 /produits/ancien-modele.html /produits/tissu-wax-premium
+
+# 4. Page 404 personnalisée
+ErrorDocument 404 /404.html
+
+# Ce fichier ne fonctionne que sur un serveur Apache (n'a aucun effet
+# en local avec Live Server ou sur un hébergement type GitHub Pages/Netlify)
