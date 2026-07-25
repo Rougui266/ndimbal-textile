@@ -8,4 +8,4 @@ Disallow: /factures-pdf/
 Allow: /blog/
 
 # Localisation du sitemap pour faciliter la découverte par les robots
-Sitemap: https://www.ndimbal-textile.sn/sitemap.xml
+Sitemap: https://rougui266.github.io/ndimbal-textile/sitemap.xml
